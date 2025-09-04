@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Zap, Home as HomeIcon, Building, Wrench, Shield, Award, Users, CheckCircle, Star, Menu, X } from 'lucide-react';
+import { fetchLatestReviews, CustomerReview } from '../services/reviewsApi';
+import logoSilverpin from '../assets/logo-silverpin.png';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +12,30 @@ export default function Home() {
     service: '',
     message: ''
   });
+  const [customerReviews, setCustomerReviews] = useState<CustomerReview[]>([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
+  const [reviewsError, setReviewsError] = useState<string | null>(null);
+
+  // Fetch reviews on component mount
+  useEffect(() => {
+    const loadReviews = async () => {
+      try {
+        setReviewsLoading(true);
+        setReviewsError(null);
+        const reviews = await fetchLatestReviews(6);
+        setCustomerReviews(reviews);
+      } catch (error) {
+        console.error('Failed to load reviews:', error);
+        setReviewsError('Failed to load customer reviews. Please try again later.');
+        // Fallback to empty array or you could set some default reviews
+        setCustomerReviews([]);
+      } finally {
+        setReviewsLoading(false);
+      }
+    };
+
+    loadReviews();
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -120,55 +146,19 @@ export default function Home() {
     }
   ];
 
-  const customerReviews = [
-    {
-      name: "Sandra",
-      rating: 100,
-      review: "Beant replaced a vent and duct system in our bathroom. He responded really quickly and came over both days of the weekend to complete the job, as he had to get extra parts. We were really happy with the job and would definitely use him again.",
-      date: "May 2025",
-      service: "Bathroom Electrical Work"
-    },
-    {
-      name: "Jagwinder",
-      rating: 98,
-      review: "Quick response and approachable any time. Very happy with their job. Highly recommended",
-      date: "May 2025",
-      service: "General Electrical"
-    },
-    {
-      name: "Singh",
-      rating: 100,
-      review: "Serviced combi-oven: On time, gave details of the job what needed to be done and how long it will take. Job was done the same week. Good communication and clear on terms. We will definitely contact him for further jobs.",
-      date: "Apr 2025",
-      service: "Commercial Equipment"
-    },
-    {
-      name: "Janene",
-      rating: 100,
-      review: "Very accommodating. Came promptly with quote and finished the job in good time. Wired in my spa",
-      date: "Apr 2025",
-      service: "Spa Installation"
-    },
-    {
-      name: "Rakesh",
-      rating: 93,
-      review: "Our RCD was tripping and we were really worried. We contacted Beant and explained the situation. He came to our premises as soon as he could. He checked everything thoroughly and explained everything. Beant is a very honest and capable electrician.",
-      date: "May 2025",
-      service: "Emergency Service"
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
+          <div className="flex justify-between items-center h-20 sm:h-24">
+            <div className="flex items-center justify-center">
               <img 
-                src="/src/assets/logo-silverpin.png" 
+                src={logoSilverpin} 
                 alt="Silver Pin Electrical" 
-                className="h-8 sm:h-10 md:h-12 w-auto max-w-full"
+                className="h-14 sm:h-18 md:h-20 w-auto max-w-full max-h-full"
               />
             </div>
             
@@ -236,7 +226,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center">
+      <section id="home" className="relative h-screen flex items-center justify-center pt-20 sm:pt-24">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -306,43 +296,62 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {customerReviews.map((review, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < Math.floor(review.rating / 20)
-                            ? 'text-yellow-400 fill-current'
-                            : 'text-gray-300'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="ml-2 text-sm font-semibold text-gray-700">
-                    {review.rating}%
-                  </span>
-                </div>
-                
-                <p className="text-gray-600 mb-4 italic">
-                  "{review.review}"
-                </p>
-                
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="font-semibold text-gray-900">{review.name}</p>
-                      <p className="text-sm text-gray-500">{review.service}</p>
-                    </div>
-                    <p className="text-sm text-gray-500">{review.date}</p>
-                  </div>
-                </div>
+          {reviewsLoading ? (
+            <div className="flex justify-center items-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              <span className="ml-3 text-gray-600">Loading latest reviews...</span>
+            </div>
+          ) : reviewsError ? (
+            <div className="text-center py-12">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
+                <p className="text-red-600 mb-4">Unable to load reviews at the moment.</p>
+                <button 
+                  onClick={() => window.location.reload()}
+                  className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+                >
+                  Try Again
+                </button>
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {customerReviews.map((review, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="flex items-center mb-4">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-5 h-5 ${
+                            i < Math.floor(review.rating / 20)
+                              ? 'text-yellow-400 fill-current'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="ml-2 text-sm font-semibold text-gray-700">
+                      {review.rating}%
+                    </span>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-4 italic">
+                    "{review.review}"
+                  </p>
+                  
+                  <div className="border-t pt-4">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold text-gray-900">{review.name}</p>
+                        <p className="text-sm text-gray-500">{review.service}</p>
+                      </div>
+                      <p className="text-sm text-gray-500">{review.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
           
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">
@@ -658,9 +667,9 @@ export default function Home() {
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <div className="flex items-center justify-center mb-4">
               <img 
-                 src="/src/assets/logo-silverpin.png" 
+                 src={logoSilverpin} 
                  alt="Silver Pin Electrical" 
-                 className="h-10 sm:h-12 md:h-14 w-auto max-w-full"
+                 className="h-16 sm:h-20 md:h-24 w-auto max-w-full"
                />
             </div>
             <p className="text-gray-400">
