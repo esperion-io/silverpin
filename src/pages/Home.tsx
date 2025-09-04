@@ -165,8 +165,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Zap className="w-8 h-8 text-blue-600 mr-2" />
-              <span className="text-xl font-bold text-gray-900">Silver Pin Electrical</span>
+              <img 
+                src="/src/assets/logo-silverpin.png" 
+                alt="Silver Pin Electrical" 
+                className="h-8 sm:h-10 md:h-12 w-auto max-w-full"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -654,8 +657,11 @@ export default function Home() {
           
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <div className="flex items-center justify-center mb-4">
-              <Zap className="w-8 h-8 text-orange-500 mr-2" />
-              <span className="text-2xl font-bold">Silver Pin Electrical</span>
+              <img 
+                 src="/src/assets/logo-silverpin.png" 
+                 alt="Silver Pin Electrical" 
+                 className="h-10 sm:h-12 md:h-14 w-auto max-w-full"
+               />
             </div>
             <p className="text-gray-400">
               &copy; 2024 Silver Pin Electrical Services. All rights reserved. Licensed Electrical Contractor.
