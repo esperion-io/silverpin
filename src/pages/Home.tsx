@@ -120,6 +120,44 @@ export default function Home() {
     }
   ];
 
+  const customerReviews = [
+    {
+      name: "Sandra",
+      rating: 100,
+      review: "Beant replaced a vent and duct system in our bathroom. He responded really quickly and came over both days of the weekend to complete the job, as he had to get extra parts. We were really happy with the job and would definitely use him again.",
+      date: "May 2025",
+      service: "Bathroom Electrical Work"
+    },
+    {
+      name: "Jagwinder",
+      rating: 98,
+      review: "Quick response and approachable any time. Very happy with their job. Highly recommended",
+      date: "May 2025",
+      service: "General Electrical"
+    },
+    {
+      name: "Singh",
+      rating: 100,
+      review: "Serviced combi-oven: On time, gave details of the job what needed to be done and how long it will take. Job was done the same week. Good communication and clear on terms. We will definitely contact him for further jobs.",
+      date: "Apr 2025",
+      service: "Commercial Equipment"
+    },
+    {
+      name: "Janene",
+      rating: 100,
+      review: "Very accommodating. Came promptly with quote and finished the job in good time. Wired in my spa",
+      date: "Apr 2025",
+      service: "Spa Installation"
+    },
+    {
+      name: "Rakesh",
+      rating: 93,
+      review: "Our RCD was tripping and we were really worried. We contacted Beant and explained the situation. He came to our premises as soon as he could. He checked everything thoroughly and explained everything. Beant is a very honest and capable electrician.",
+      date: "May 2025",
+      service: "Emergency Service"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -140,7 +178,7 @@ export default function Home() {
                 <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('quote')} className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                   Get Quote
                 </button>
                 <button onClick={() => scrollToSection('portfolio')} className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
@@ -177,7 +215,7 @@ export default function Home() {
               <button onClick={() => scrollToSection('services')} className="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium w-full text-left">
                 Services
               </button>
-              <button onClick={() => scrollToSection('quote')} className="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium w-full text-left">
+              <button onClick={() => scrollToSection('contact')} className="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium w-full text-left">
                 Get Quote
               </button>
               <button onClick={() => scrollToSection('portfolio')} className="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium w-full text-left">
@@ -211,7 +249,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => scrollToSection('quote')}
+              onClick={() => scrollToSection('contact')}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
               Get Free Quote
@@ -248,120 +286,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Get Quote Section */}
-      <section id="quote" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Your Free Quote</h2>
-            <p className="text-xl text-gray-600">
-              Tell us about your electrical needs and we'll provide a detailed quote within 24 hours.
+      {/* Customer Reviews Section */}
+      <section id="reviews" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Don't just take our word for it. See what our satisfied customers have to say about our electrical services.
             </p>
+            <div className="flex items-center justify-center mb-8">
+              <div className="flex items-center bg-green-50 px-6 py-3 rounded-full">
+                <Star className="w-6 h-6 text-yellow-400 fill-current mr-2" />
+                <span className="text-2xl font-bold text-green-600">98.7%</span>
+                <span className="text-gray-600 ml-2">Customer Approval Rating</span>
+              </div>
+            </div>
           </div>
           
-          <form action="https://formsubmit.co/info@silverpinelectrical.co.nz" method="POST" className="bg-gray-50 p-8 rounded-lg">
-            <input type="hidden" name="_subject" value="New Quote Request from Silver Pin Electrical Website" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://anthonyxiao.github.io/silverpin/" />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Your full name"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {customerReviews.map((review, index) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < Math.floor(review.rating / 20)
+                            ? 'text-yellow-400 fill-current'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="ml-2 text-sm font-semibold text-gray-700">
+                    {review.rating}%
+                  </span>
+                </div>
+                
+                <p className="text-gray-600 mb-4 italic">
+                  "{review.review}"
+                </p>
+                
+                <div className="border-t pt-4">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="font-semibold text-gray-900">{review.name}</p>
+                      <p className="text-sm text-gray-500">{review.service}</p>
+                    </div>
+                    <p className="text-sm text-gray-500">{review.date}</p>
+                  </div>
+                </div>
               </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="021 123 4567"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                  Service Required *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">Select a service</option>
-                  <option value="24/7 Emergency Services">24/7 Emergency Services</option>
-                  <option value="Residential Electrical">Residential Electrical</option>
-                  <option value="Commercial Solutions">Commercial Solutions</option>
-                  <option value="Electrical Installations">Electrical Installations</option>
-                  <option value="Safety Inspections">Safety Inspections</option>
-                  <option value="Power Solutions">Power Solutions</option>
-                  <option value="Smart Home Integration">Smart Home Integration</option>
-                  <option value="Industrial Electrical">Industrial Electrical</option>
-                  <option value="Maintenance & Repairs">Maintenance & Repairs</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Project Details *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Please describe your electrical needs, project scope, timeline, and any specific requirements..."
-              />
-            </div>
-            
-            <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors"
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Based on verified reviews from NoCowboys.co.nz
+            </p>
+            <a
+              href="https://www.nocowboys.co.nz/businesses/silver-pin-electrical-services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
             >
-              Submit Quote Request
-            </button>
-          </form>
+              View All Reviews
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -465,65 +460,195 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact & Quote Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Get in Touch & Request a Quote</h2>
+            <p className="text-xl text-gray-300">
+              Ready to get started? Contact us today or request a free quote for professional electrical services.
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Ready to start your electrical project? Contact us today for a free consultation and quote.
-              </p>
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="flex items-start">
+                <MapPin className="w-6 h-6 text-orange-500 mt-1 mr-4" />
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Service Areas</h3>
+                  <p className="text-gray-300">
+                    Auckland, Hamilton, Tauranga, and surrounding regions
+                  </p>
+                </div>
+              </div>
               
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <Phone className="w-6 h-6 text-orange-500 mr-4" />
-                  <div>
-                    <div className="font-semibold">Phone</div>
-                    <div className="text-gray-300">021 123 4567</div>
+              <div className="flex items-start">
+                <Phone className="w-6 h-6 text-orange-500 mt-1 mr-4" />
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                  <p className="text-gray-300">
+                    <a href="tel:+64211234567" className="hover:text-orange-400 transition-colors">
+                      021 123 4567
+                    </a>
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Mail className="w-6 h-6 text-orange-500 mt-1 mr-4" />
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Email</h3>
+                  <p className="text-gray-300">
+                    <a href="mailto:info@silverpinelectrical.co.nz" className="hover:text-orange-400 transition-colors">
+                      info@silverpinelectrical.co.nz
+                    </a>
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Clock className="w-6 h-6 text-orange-500 mt-1 mr-4" />
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Business Hours</h3>
+                  <div className="text-gray-300">
+                    <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Emergency calls only</p>
                   </div>
                 </div>
-                
-                <div className="flex items-center">
-                  <Mail className="w-6 h-6 text-orange-500 mr-4" />
-                  <div>
-                    <div className="font-semibold">Email</div>
-                    <div className="text-gray-300">info@silverpinelectrical.co.nz</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <MapPin className="w-6 h-6 text-orange-500 mr-4" />
-                  <div>
-                    <div className="font-semibold">Service Area</div>
-                    <div className="text-gray-300">Auckland & Surrounding Areas</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <Clock className="w-6 h-6 text-orange-500 mr-4" />
-                  <div>
-                    <div className="font-semibold">Hours</div>
-                    <div className="text-gray-300">24/7 Emergency Service Available</div>
-                    <div className="text-gray-300">Mon-Fri: 7:00 AM - 6:00 PM</div>
-                  </div>
+              </div>
+              
+              {/* Emergency Service CTA */}
+              <div className="bg-red-600 p-6 rounded-lg mt-8">
+                <div className="text-center">
+                  <Zap className="w-12 h-12 text-white mx-auto mb-3" />
+                  <h3 className="text-xl font-bold mb-3">Emergency Service</h3>
+                  <p className="text-red-100 mb-4 text-sm">
+                    Electrical emergency? We're available 24/7 for urgent repairs and safety issues.
+                  </p>
+                  <a
+                    href="tel:+64211234567"
+                    className="inline-flex items-center bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-md font-semibold transition-colors"
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now: 021 123 4567
+                  </a>
                 </div>
               </div>
             </div>
             
-            <div>
-              <div className="bg-gray-800 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6">Emergency Service</h3>
-                <p className="text-gray-300 mb-6">
-                  Electrical emergencies can't wait. Our 24/7 emergency service ensures you get the help you need, when you need it.
-                </p>
-                <a
-                  href="tel:+64-21-123-4567"
-                  className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+            {/* Quote Request Form */}
+            <div className="bg-gray-800 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold mb-6">Get Your Free Quote</h3>
+              <p className="text-gray-300 mb-6">
+                Tell us about your electrical needs and we'll provide a detailed quote within 24 hours.
+              </p>
+              
+              <form action="https://formsubmit.co/info@silverpinelectrical.co.nz" method="POST">
+                <input type="hidden" name="_subject" value="New Quote Request from Silver Pin Electrical Website" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://anthonyxiao.github.io/silverpin/" />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500 text-white"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500 text-white"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500 text-white"
+                      placeholder="021 123 4567"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+                      Service Required *
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      required
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500 text-white"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="24/7 Emergency Services">24/7 Emergency Services</option>
+                      <option value="Residential Electrical">Residential Electrical</option>
+                      <option value="Commercial Solutions">Commercial Solutions</option>
+                      <option value="Electrical Installations">Electrical Installations</option>
+                      <option value="Safety Inspections">Safety Inspections</option>
+                      <option value="Power Solutions">Power Solutions</option>
+                      <option value="Smart Home Integration">Smart Home Integration</option>
+                      <option value="Industrial Electrical">Industrial Electrical</option>
+                      <option value="Maintenance & Repairs">Maintenance & Repairs</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    Project Details *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500 text-white"
+                    placeholder="Please describe your electrical needs, project scope, timeline, and any specific requirements..."
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-semibold transition-colors"
                 >
-                  Call Emergency Line
-                </a>
-              </div>
+                  Submit Quote Request
+                </button>
+              </form>
             </div>
           </div>
           
