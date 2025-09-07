@@ -276,9 +276,9 @@ const Home: React.FC = () => {
                   <a href="#team" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Team</a>
                 </div>
                 <div className="flex items-center space-x-6">
-                  <a href="tel:021234567" className="flex items-center text-gray-700 hover:text-red-600 transition-all">
+                  <a href="tel:0273375190" className="flex items-center text-gray-700 hover:text-red-600 transition-all">
                     <i className="fas fa-phone-alt mr-2 text-red-600"></i>
-                    <span className="font-medium">021 234 567</span>
+                    <span className="font-medium">027 337 5190</span>
                   </a>
                   <a href="#contact" className="btn-primary px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300">Contact Us</a>
                 </div>
@@ -302,9 +302,9 @@ const Home: React.FC = () => {
                     <a href="#why-choose-us" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Why Choose Us?</a>
                     <a href="#team" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Team</a>
                     <div className="pt-6 border-t border-gray-200">
-                      <a href="tel:021234567" className="flex items-center text-xl font-medium text-gray-800 hover:text-red-600 mb-6">
+                      <a href="tel:0273375190" className="flex items-center text-xl font-medium text-gray-800 hover:text-red-600 mb-6">
                         <i className="fas fa-phone-alt mr-3 text-red-600"></i>
-                        021 234 567
+                        027 337 5190
                       </a>
                       <a href="#contact" className="btn-primary w-full text-center px-6 py-4 rounded-full font-semibold shadow-lg">Contact Us</a>
                     </div>
@@ -336,9 +336,9 @@ const Home: React.FC = () => {
               <a href="#contact" className="btn-primary px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
                 Get Free Quote
               </a>
-              <a href="tel:021234567" className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center justify-center">
+              <a href="tel:0273375190" className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center justify-center">
                 <i className="fas fa-phone-alt mr-2"></i>
-                Call Now: 021 234 567
+                Call Now: 027 337 5190
               </a>
             </div>
           </div>
@@ -350,11 +350,11 @@ const Home: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
               <div className="flex items-center mb-2 md:mb-0">
                 <i className="fas fa-phone-alt mr-2"></i>
-                <span className="font-medium">Emergency Service: 021 234 567</span>
+                <span className="font-medium">Emergency Service: 027 337 5190</span>
               </div>
               <div className="flex items-center mb-2 md:mb-0">
                 <i className="fas fa-envelope mr-2"></i>
-                <span className="font-medium">info@silverpinelectrical.co.nz</span>
+                <span className="font-medium">silverpinelectrical@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-clock mr-2"></i>
@@ -652,9 +652,9 @@ const Home: React.FC = () => {
               <a href="#contact" className="btn-primary px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
                 Get Free Quote
               </a>
-              <a href="tel:021234567" className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center justify-center">
+              <a href="tel:0273375190" className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center justify-center">
                 <i className="fas fa-phone-alt mr-2"></i>
-                Call Now: 021 234 567
+                Call Now: 027 337 5190
               </a>
             </div>
           </div>
@@ -704,8 +704,8 @@ const Home: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Phone</h3>
                     <p className="text-gray-300">
-                      <a href="tel:021234567" className="hover:text-red-400 transition-colors">
-                        021 234 567
+                      <a href="tel:0273375190" className="hover:text-red-400 transition-colors">
+                        027 337 5190
                       </a>
                     </p>
                   </div>
@@ -716,8 +716,8 @@ const Home: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Email</h3>
                     <p className="text-gray-300">
-                      <a href="mailto:info@silverpinelectrical.co.nz" className="hover:text-red-400 transition-colors">
-                        info@silverpinelectrical.co.nz
+                      <a href="mailto:silverpinelectrical@gmail.com" className="hover:text-red-400 transition-colors">
+                        silverpinelectrical@gmail.com
                       </a>
                     </p>
                   </div>
