@@ -61,11 +61,19 @@ const fallbackReviewsPool: CustomerReview[] = [
   },
   {
     name: "Rakesh",
-    rating: convertPercentageToStars(93), // 4 stars
+    rating: convertPercentageToStars(100), // 4 stars
     review: "Our RCD was tripping and we were really worried. We contacted Beant and explained the situation. He came to our premises as soon as he could. He checked everything thoroughly and explained to my wife, who was at home at that time. Beant explained that everything was OK with our switchboard and no maintenance was required. My wife informed me that he was very polite and professional in his work. I spoke to Beant the same evening and asked him for payment details. Beant did not accept any payment because he said it was a small job. He also told me that if the RCD were to trip again, we could call him any day even up to 9pm. Despite my requests to make a payment he refused to take any payment. In future whenever we have any electrical maintenance work, we will call him. In my view Beant is a very honest and capable electrician.",
     date: "May 2025",
     service: "Emergency Service",
     contact: "Beant Singh"
+  },
+  {
+    name: "Sheldon",
+    rating: convertPercentageToStars(100),
+    review: "Beant and Mandeep did an amazing job at our house. We had several things done which were all completed to perfection. We were especially impressed with their communication and politeness coupled with the high standard of work. We highly recommend Silver Pin Electrical Services for the above reasons and would definitely use their services again in the future.",
+    date: "May 2025",
+    service: "Electrical Services",
+    contact: "Beant and Mandeep"
   }
 ];
 

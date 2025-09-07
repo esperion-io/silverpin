@@ -3,9 +3,7 @@ import { Star, Menu, X } from 'lucide-react';
 import { toast } from 'sonner';
 import logo from '../assets/logo-silverpin.png';
 import uteImage from '../assets/ute.jpeg';
-import previousWork1 from '../assets/previouse work 1.jpeg';
-import previousWork2 from '../assets/previouse work 2.jpeg';
-import previousWork6 from '../assets/previouse work 6.jpeg';
+import ImageCarousel from '../components/ImageCarousel';
 import { fetchLatestReviews, CustomerReview } from '../services/reviewsApi';
 import '../styles/cascade.css';
 
@@ -105,23 +103,7 @@ const Home: React.FC = () => {
     }
   ];
 
-  const portfolio = [
-    {
-      title: "Commercial Office Fit-out",
-      description: "Full electrical installation for a new office building",
-      image: previousWork2
-    },
-    {
-      title: "Smart Home Installation",
-      description: "Advanced smart home electrical systems and automation setup",
-      image: previousWork1
-    },
-    {
-      title: "Modern Home Renovation",
-      description: "Complete electrical upgrade for a luxury Auckland home",
-      image: previousWork6
-    }
-  ];
+  // Portfolio images are now handled by the ImageCarousel component
 
   return (
     <>
@@ -686,25 +668,11 @@ const Home: React.FC = () => {
                 Our Recent Work
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Take a look at some of our completed electrical projects and installations.
+                Browse through our portfolio of completed electrical projects and installations.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {portfolio.map((item, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 silverpin-dark">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ImageCarousel autoPlay={true} autoPlayInterval={5000} />
           </div>
         </section>
 
