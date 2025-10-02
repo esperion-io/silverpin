@@ -176,7 +176,23 @@ const Home: React.FC = () => {
           background-color: white !important;
         }
         #mobileMenu {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          width: 100vw !important;
+          height: 80vh !important;
           z-index: 1000 !important;
+          background: rgba(255, 255, 255, 0.95) !important;
+          backdrop-filter: blur(10px) !important;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+          transform: translateY(-100%) !important;
+          transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+          opacity: 0 !important;
+        }
+        #mobileMenu.menu-open {
+          transform: translateY(0) !important;
+          opacity: 1 !important;
         }
         .sticky-header .nav-link {
           position: relative;
@@ -285,7 +301,7 @@ const Home: React.FC = () => {
               </div>
 
               {/* Mobile Menu (Hidden by default) */}
-              <div id="mobileMenu" className={`fixed inset-0 bg-white z-50 lg:hidden ${isMenuOpen ? '' : 'hidden'}`}>
+              <div id="mobileMenu" className={`fixed top-0 left-0 right-0 bg-white bg-opacity-95 z-50 lg:hidden ${isMenuOpen ? 'menu-open' : ''}`}>
                 <div className="container mx-auto px-4 py-6">
                   <div className="flex justify-between items-center mb-8">
                     <a href="#" className="flex items-center">
