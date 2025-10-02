@@ -285,11 +285,9 @@ const Home: React.FC = () => {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center justify-between flex-grow ml-10">
                 <div className="flex space-x-8">
-                  <a href="#" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Home</a>
                   <a href="#who-we-are" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Who We Are</a>
                   <a href="#what-we-do" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">What We Do</a>
                   <a href="#why-choose-us" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Why Choose Us?</a>
-                  <a href="#team" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Team</a>
                 </div>
                 <div className="flex items-center space-x-6">
                   <a href="tel:0273375190" className="flex items-center text-gray-700 hover:text-red-600 transition-all">
