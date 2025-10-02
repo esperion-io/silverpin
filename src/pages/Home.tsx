@@ -253,7 +253,7 @@ const Home: React.FC = () => {
                   </span>
                   <span className="flex items-center">
                     <i className="fas fa-envelope mr-2"></i>
-                    info@silverpinelectrical.co.nz
+                    silverpinelectrical@gmail.com
                   </span>
                 </div>
                 <div className="hidden md:flex items-center space-x-4">
