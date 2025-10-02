@@ -752,7 +752,7 @@ const Home: React.FC = () => {
                {/* Contact Form */}
                <div className="bg-gray-800 p-8 rounded-lg">
                  <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-                 <form className="space-y-6">
+                 <form className="space-y-6" action="https://usebasin.com/f/b67214c2b374" method="POST">
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                      <div>
                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
