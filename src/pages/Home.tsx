@@ -899,7 +899,7 @@ const Home: React.FC = () => {
             <div className="border-t border-gray-800 mt-12 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                  © 2025 Silver Pin Electrical. All rights reserved. | Built by <a href="www.esperion.io" className="hover:text-gray-800 transition-colors">esperion.io</a>
+                  © 2025 Silver Pin Electrical. All rights reserved | built by esperion.io
                 </p>
                 <div className="flex items-center space-x-4">
                   <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
