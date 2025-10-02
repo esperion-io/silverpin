@@ -889,10 +889,8 @@ const Home: React.FC = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li><a href="#home" className="hover:text-red-400 transition-colors">Home</a></li>
                   <li><a href="#about" className="hover:text-red-400 transition-colors">About Us</a></li>
                   <li><a href="#services" className="hover:text-red-400 transition-colors">Services</a></li>
-                  <li><a href="#team" className="hover:text-red-400 transition-colors">Our Team</a></li>
                   <li><a href="#contact" className="hover:text-red-400 transition-colors">Contact</a></li>
                 </ul>
               </div>
@@ -901,7 +899,7 @@ const Home: React.FC = () => {
             <div className="border-t border-gray-800 mt-12 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                  © 2024 Silver Pin Electrical. All rights reserved.
+                  © 2025 Silver Pin Electrical. All rights reserved. | Built by <a href="www.esperion.io" className="hover:text-gray-800 transition-colors">esperion.io</a>
                 </p>
                 <div className="flex items-center space-x-4">
                   <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
