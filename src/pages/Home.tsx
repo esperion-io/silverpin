@@ -249,21 +249,12 @@ const Home: React.FC = () => {
                 <div className="flex items-center space-x-6">
                   <span className="flex items-center">
                     <i className="fas fa-phone mr-2"></i>
-                    0800 SILVERPIN
+                    027 337 5190
                   </span>
                   <span className="flex items-center">
                     <i className="fas fa-envelope mr-2"></i>
-                    info@silverpinelectrical.co.nz
+                    silverpinelectrical@gmail.com
                   </span>
-                </div>
-                <div className="hidden md:flex items-center space-x-4">
-                  <span>Follow Us:</span>
-                  <a href="#" className="hover:text-red-400">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="hover:text-red-400">
-                    <i className="fab fa-instagram"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -285,11 +276,9 @@ const Home: React.FC = () => {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center justify-between flex-grow ml-10">
                 <div className="flex space-x-8">
-                  <a href="#" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Home</a>
                   <a href="#who-we-are" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Who We Are</a>
                   <a href="#what-we-do" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">What We Do</a>
                   <a href="#why-choose-us" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Why Choose Us?</a>
-                  <a href="#team" className="nav-link font-medium text-gray-700 hover:text-red-600 transition-all relative">Team</a>
                 </div>
                 <div className="flex items-center space-x-6">
                   <a href="tel:0273375190" className="flex items-center text-gray-700 hover:text-red-600 transition-all">
@@ -748,19 +737,6 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
-                <div className="flex items-center space-x-4 pt-6">
-                  <span className="text-gray-300">Follow Us:</span>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-facebook-f text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-instagram text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-linkedin-in text-xl"></i>
-                  </a>
-                </div>
               </div>
             
                {/* Contact Form */}
@@ -877,11 +853,11 @@ const Home: React.FC = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Our Services</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Residential Electrical</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Commercial Solutions</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Emergency Services</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Safety Inspections</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Smart Home Systems</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Residential Electrical</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Commercial Solutions</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Emergency Services</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Safety Inspections</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Smart Home Systems</a></li>
                 </ul>
               </div>
               
@@ -889,10 +865,8 @@ const Home: React.FC = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li><a href="#home" className="hover:text-red-400 transition-colors">Home</a></li>
-                  <li><a href="#about" className="hover:text-red-400 transition-colors">About Us</a></li>
-                  <li><a href="#services" className="hover:text-red-400 transition-colors">Services</a></li>
-                  <li><a href="#team" className="hover:text-red-400 transition-colors">Our Team</a></li>
+                  <li><a href="#who-we-are" className="hover:text-red-400 transition-colors">About Us</a></li>
+                  <li><a href="#what-we-do" className="hover:text-red-400 transition-colors">Services</a></li>
                   <li><a href="#contact" className="hover:text-red-400 transition-colors">Contact</a></li>
                 </ul>
               </div>
@@ -900,20 +874,7 @@ const Home: React.FC = () => {
             
             <div className="border-t border-gray-800 mt-12 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                  © 2024 Silver Pin Electrical. All rights reserved.
-                </p>
-                <div className="flex items-center space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
+                <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Silver Pin Electrical. All rights reserved. Built by esperion.io</p>
               </div>
             </div>
           </div>

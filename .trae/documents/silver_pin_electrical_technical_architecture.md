@@ -167,7 +167,7 @@ Company Information (company.json)
   "name": "Silver Pin Electrical Services",
   "tagline": "Powered by Integrity, Wired for Success",
   "phone": "+64 21 XXX XXXX",
-  "email": "info@silverpinelectrical.co.nz",
+  "email": "silverpinelectrical@gmail.com",
   "address": "Auckland, New Zealand",
   "licenses": ["EWRB Registered", "Fully Licensed & Qualified"],
   "service_areas": ["Auckland", "North Shore", "West Auckland"]
