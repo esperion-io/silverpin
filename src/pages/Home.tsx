@@ -256,15 +256,6 @@ const Home: React.FC = () => {
                     silverpinelectrical@gmail.com
                   </span>
                 </div>
-                <div className="hidden md:flex items-center space-x-4">
-                  <span>Follow Us:</span>
-                  <a href="#" className="hover:text-red-400">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="hover:text-red-400">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -748,19 +739,6 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
-                <div className="flex items-center space-x-4 pt-6">
-                  <span className="text-gray-300">Follow Us:</span>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-facebook-f text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-instagram text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                    <i className="fab fa-linkedin-in text-xl"></i>
-                  </a>
-                </div>
               </div>
             
                {/* Contact Form */}
@@ -873,18 +851,6 @@ const Home: React.FC = () => {
                 </div>
               </div>
               
-              {/* Services */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Residential Electrical</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Commercial Solutions</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Emergency Services</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Safety Inspections</a></li>
-                  <li><a href="#" className="hover:text-red-400 transition-colors">Smart Home Systems</a></li>
-                </ul>
-              </div>
-              
               {/* Quick Links */}
               <div>
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -893,25 +859,6 @@ const Home: React.FC = () => {
                   <li><a href="#services" className="hover:text-red-400 transition-colors">Services</a></li>
                   <li><a href="#contact" className="hover:text-red-400 transition-colors">Contact</a></li>
                 </ul>
-              </div>
-            </div>
-            
-            <div className="border-t border-gray-800 mt-12 pt-8">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                  © 2025 Silver Pin Electrical. All rights reserved | built by esperion.io
-                </p>
-                <div className="flex items-center space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
