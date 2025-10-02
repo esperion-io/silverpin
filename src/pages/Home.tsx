@@ -312,17 +312,15 @@ const Home: React.FC = () => {
                     </button>
                   </div>
                   <div className="flex flex-col space-y-6">
-                    <a href="#" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Home</a>
-                    <a href="#who-we-are" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Who We Are</a>
-                    <a href="#what-we-do" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">What We Do</a>
-                    <a href="#why-choose-us" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Why Choose Us?</a>
-                    <a href="#team" className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Team</a>
+                    <a href="#who-we-are" onClick={toggleMobileMenu} className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Who We Are</a>
+                    <a href="#what-we-do" onClick={toggleMobileMenu} className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">What We Do</a>
+                    <a href="#why-choose-us" onClick={toggleMobileMenu} className="text-xl font-medium text-gray-800 hover:text-red-600 transition-all">Why Choose Us?</a>
                     <div className="pt-6 border-t border-gray-200">
                       <a href="tel:0273375190" className="flex items-center text-xl font-medium text-gray-800 hover:text-red-600 mb-6">
                         <i className="fas fa-phone-alt mr-3 text-red-600"></i>
                         027 337 5190
                       </a>
-                      <a href="#contact" className="btn-primary w-full text-center px-6 py-4 rounded-full font-semibold shadow-lg">Contact Us</a>
+                      <a href="#contact" onClick={toggleMobileMenu} className="btn-primary w-full text-center px-6 py-4 rounded-full font-semibold shadow-lg">Contact Us</a>
                     </div>
                   </div>
                 </div>
